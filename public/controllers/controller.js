@@ -16,16 +16,16 @@ $scope.AddContact = function(){
 	console.log($scope.contact);
 	$http.post('/contactlist',$scope.contact).success(function(response){
 		console.log(response);
-		refresh();
-	})
+	});
+	refresh();
 };
 
 
 $scope.remove = function(id){
 	console.log(id);
 	$http.delete('/contactlist/'+ id).success(function(response){
-		refresh();
-	})
+	});
+	refresh();
 };
 
 $scope.edit = function(id){
@@ -38,8 +38,9 @@ $scope.edit = function(id){
 $scope.update = function(id){
 	console.log($scope.contact._id);
 	$http.put('/contactlist/'+ $scope.contact._id,$scope.contact).success(function(response){
-		refresh();
-	})
+		console.log(response);
+	});
+	refresh();
 };
 
 
